@@ -27,14 +27,69 @@ body::before {
 
 .rotating-disc {
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 20px;
     transform: translate(-40%, -50%);
-    width: 900px;
-    height: 900px;
+    width: 700px;
+    height: 700px;
     animation: spin 6s linear infinite;
     pointer-events: none;
     z-index: 1;
+}
+
+.disc-buttons {
+    position: absolute;
+    top: 65%;
+    left: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2;
+}
+
+.disc-btn {
+    position: relative;
+    background-color: #776ea6;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.disc-btn img {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+}
+
+.disc-btn .label {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #dfdbf1;
+    padding: 4px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+    color: #776ea6;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    pointer-events: none;
+}
+
+.disc-btn:hover .label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
+}
+
+.disc-btn.active {
+    background-color: #dfd2ff;
 }
 
 .main-container {
@@ -45,7 +100,7 @@ body::before {
     height: 80vh;
     overflow: hidden;
     background-color: #f6f6f9;
-    border-radius: 50px;
+    border-radius: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     font-family: 'Courier New', Courier, monospace;
 }
