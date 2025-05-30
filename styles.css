@@ -18,11 +18,23 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('resources/design.jpg');
+    background-image: url('resources/background.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.3;
     z-index: 0;
+}
+
+.rotating-disc {
+    position: absolute;
+    top: 35%;
+    left: 20px;
+    transform: translate(-40%, -50%);
+    width: 900px;
+    height: 900px;
+    animation: spin 6s linear infinite;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .main-container {
@@ -31,9 +43,18 @@ body::before {
     width: 90%;
     max-width: 1200px;
     height: 80vh;
-    overflow: visible;
+    overflow: hidden;
     background-color: #f6f6f9;
     border-radius: 50px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-40%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-40%, -50%) rotate(360deg);
+    }
 }
