@@ -150,7 +150,7 @@ body::before {
     gap: 50px;
     padding: 20px;
     margin-left: -50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     background: #f4f3f8;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -163,6 +163,12 @@ body::before {
     border-radius: 50%;
     border: 3px solid #776ea6;
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pix:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .profile-info {
@@ -234,13 +240,71 @@ body::before {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.about-me-box {
+.about-me {
+    display: flex;
+    justify-content: space-between;
     width: 550px;
-    background: #f4f3f8;
-    padding: 20px;
     margin-left: -50px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    gap: 19.5px;
+}
+
+.list-container {
+    background: #f4f3f8;
+    padding: 1.5rem 1rem 1rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    width: 285px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+.list-container:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #f4f3f8;
+    font-weight: 500;
+    margin: -1.5rem -1rem 0.5rem -1rem;
+    padding: 1rem 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: lowercase;
+    text-align: center;
+    background-color: #6e63a6;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.title em {
+    font-style: italic;
+    color: #d7c6e2;
+    font-weight: 400;
+}
+
+.custom-bullet {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+    color: #4d4d4d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.8;
+}
+
+.bullet-star li {
+    position: relative;
+    padding-left: 20px;
+    text-indent: -10px;
+}
+
+.bullet-star li::before {
+    content: "✦";
+    display: inline-block;
+    color: #b59edb;
+    left: 0;
+    margin-right: 10px;
 }
 
 .contents {
