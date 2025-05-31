@@ -319,3 +319,79 @@ body::before {
     z-index: 3;
     box-sizing: border-box;
 }
+
+.student-box {
+    width: 550px;
+    margin: 0 auto 2rem auto; /* centers and adds bottom spacing */
+    padding: 1.5rem;
+    border-radius: 20px;
+    background-color: #f4f3f8;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.student-course {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.student-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.tech-stack-box {
+    background: #f4f3f8;
+    padding: 1.5rem 1rem 1rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 550px;
+    margin: 0 auto 2rem auto;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+.tech-stack-box:hover {
+    transform: translateY(-5px);
+}
+
+.tech-title {
+    font-size: 1.5rem;
+    color: #f4f3f8;
+    font-weight: 500;
+    margin: -1.5rem -1rem 0.5rem -1rem;
+    padding: 1rem 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: lowercase;
+    text-align: center;
+    background-color: #6e63a6;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.tech-title em {
+    font-style: italic;
+    color: #d7c6e2;
+    font-weight: 400;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.tools-icons {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.tools-icons:hover {
+    transform: scale(1.1);
+}
