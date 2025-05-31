@@ -9,38 +9,75 @@
     <body>
         <div class="main-container">
             <img src="resources/disc.png" alt="rotating disc" class="rotating-disc">
+            <div class="disc-selector">
+                <input type="radio" name="tab" id="profile" checked>
+                <input type="radio" name="tab" id="university">
+                <input type="radio" name="tab" id="archive">
+            </div>
             <div class="disc-buttons">
-                <button class="disc-btn" data-section="profile">
-                    <img src="resources/profile.png" alt="profile icon">
+                <label for="profile" class="disc-btn profile-btn">
+                    <img src="resources/profile-click.png" alt="profile icon">
                     <span class="label">profile</span>
-                </button>
-                <button class="disc-btn" data-section="university">
-                    <img src="resources/university.png" alt="university icon">
+                </label>
+                <label for="university" class="disc-btn university-btn">
+                    <img src="resources/university-normal.png" alt="university icon">
                     <span class="label">uni-verse</span>
-                </button>
-                <button class="disc-btn" data-section="fiction">
-                    <img src="resources/archives.png" alt="archives icon">
-                    <span class="label">archives</span>
-                </button>
+                </label>
+                <label for="archive" class="disc-btn archive-btn">
+                    <img src="resources/archive-normal.png" alt="archive icon">
+                    <span class="label">archive</span>
+                </label>
             </div>
             <div class="contents">
-                    <div id="about-me" class="content-section">
-                        <h2>about me !</h2>
-                        <p>photo. name. nicknames. social media buttons.</p>
-                        <p>zodiac. mbti. likes & pet peeves. hobbies & interests.</p>
-                    </div>
-                    <div id="university" class="content-section">
-                        <h2>uni-verse !</h2>
-                        <p>school name. course & year level.</p>
-                        <p>skills. projects with links to github repositories.</p>
-                    </div>
-                    <div id="fiction" class="content-section">
-                        <h2>archives !</h2>
-                        <p>nickname. pseudonym. social media buttons.</p>
-                        <p>works on apps. status. chapters.</p>
-                        <p>companies. contract category.</p>
-                    </div>
+                <div class="profile-section content-section">
+                    <h2>profile !</h2>
+                    <p>photo. name. nicknames. social media buttons.</p>
+                    <p>zodiac. mbti. likes & pet peeves. hobbies & interests.</p>
                 </div>
+                <div class="university-section content-section">
+                    <h2>uni-verse !</h2>
+                    <p>school name. course & year level.</p>
+                    <p>skills. projects with links to github repositories.</p>
+                </div>
+                <div class="archive-section content-section">
+                    <h2>archive !</h2>
+                    <p>nickname. pseudonym. social media buttons.</p>
+                    <p>works on apps. status. chapters.</p>
+                    <p>companies. contract category.</p>
+                </div>
+            </div>
         </div>
+        <script>
+            const buttons = document.querySelectorAll('.disc-btn');
+            const inputs = document.querySelectorAll('.disc-selector input');
+            const icons = {
+                profile: {
+                    active: 'resources/profile-click.png',
+                    inactive: 'resources/profile-normal.png'
+                },
+                university: {
+                    active: 'resources/university-click.png',
+                    inactive: 'resources/university-normal.png'
+                },
+                archive: {
+                    active: 'resources/archive-click.png',
+                    inactive: 'resources/archive-normal.png'
+                }
+            };
+            function updateButtons() {
+                buttons.forEach((btn) => {
+                    const forID = btn.getAttribute('for');
+                    const input = document.getElementById(forID);
+                    const isActive = input.checked;
+                    const icon = btn.querySelector('img');
+                    btn.style.backgroundColor = isActive ? '#776ea6' : '#dfdbf1';
+                    icon.src = isActive ? icons[forID].active : icons[forID].inactive;
+                });
+            }
+            inputs.forEach((input) => {
+                input.addEventListener('change', updateButtons);
+            });
+            updateButtons();
+        </script>
     </body>
 </html>

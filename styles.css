@@ -28,7 +28,7 @@ body::before {
 .rotating-disc {
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 5px;
     transform: translate(-40%, -50%);
     width: 700px;
     height: 700px;
@@ -37,27 +37,71 @@ body::before {
     z-index: 1;
 }
 
+.main-container {
+    position: relative;
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    overflow: hidden;
+    background-color: #d3ceee;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-family: serif;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-40%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-40%, -50%) rotate(360deg);
+    }
+}
+
+.disc-selector input[type="radio"] {
+    display: none;
+}
+
 .disc-buttons {
     position: absolute;
-    top: 65%;
-    left: 240px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    z-index: 2;
+    top: 50%;
+    gap: 25px;
+    z-index: 3;
+}
+
+.profile-btn {
+    position: relative;
+    left: 365px;
+}
+
+.university-btn {
+    position: relative;
+    left: 345px;
+}
+
+.archive-btn {
+    position: relative;
+    left: 300px;
 }
 
 .disc-btn {
     position: relative;
-    background-color: #776ea6;
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    padding: 0;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;;
+}
+
+.disc-btn:hover {
+    transform: scale(1.1);
 }
 
 .disc-btn img {
@@ -68,7 +112,7 @@ body::before {
 
 .disc-btn .label {
     position: absolute;
-    left: 60px;
+    left: 70px;
     top: 50%;
     transform: translateY(-50%);
     background-color: #dfdbf1;
@@ -76,10 +120,10 @@ body::before {
     border-radius: 10px;
     opacity: 0;
     white-space: nowrap;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    font-size: 14px;
+    font-size: 16px;
     color: #776ea6;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
 }
 
@@ -88,28 +132,45 @@ body::before {
     transform: translateY(-50%) translateX(5px);
 }
 
-.disc-btn.active {
-    background-color: #dfd2ff;
-}
-
-.main-container {
-    position: relative;
+.contents {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 30px 20px;
     display: flex;
-    width: 90%;
-    max-width: 1200px;
-    height: 80vh;
-    overflow: hidden;
-    background-color: #f6f6f9;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    font-family: 'Courier New', Courier, monospace;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    z-index: 3; /* make sure it's above rotating disc */
+    box-sizing: border-box;
 }
 
-@keyframes spin {
-    from {
-        transform: translate(-40%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-40%, -50%) rotate(360deg);
-    }
+.content-section {
+    display: none;
+    background: white;
+    padding: 20px;
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/*
+.content-section {
+    display: none;
+    margin-top: 400px;
+    left: 250px;
+    background: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 20%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+*/
+
+#profile:checked ~ .contents .profile-section,
+#university:checked ~ .contents .university-section,
+#archive:checked ~ .contents .archive-section {
+    display: block;
 }
