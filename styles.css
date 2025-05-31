@@ -317,69 +317,6 @@ body::before {
     z-index: 3;
     box-sizing: border-box;
 }
-/*
-.student-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 550px;
-    padding: 20px;
-    margin-left: -30px;
-    margin-bottom: 20px;
-    background: #f4f3f8;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    gap: 10px;
-}
-
-.student-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.student-course {
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 0;
-    color: #6e63a6;
-    background-clip: text;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.student-description {
-    font-size: 1em;
-    color: #6c648f;
-    font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    letter-spacing: 0.5px;
-    opacity: 0.9;
-    margin-top: 8px;
-    margin-bottom: 0px;
-    line-height: 1.4;
-}
-
-.univ-icons {
-    display: flex;
-    flex-direction: row;
-    gap: 13px;
-    justify-content: center;
-}
-
-.acad-icons {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.acad-icons:hover {
-    transform: scale(1.1);
-}
-*/
 
 .student-box {
     display: flex;
@@ -392,7 +329,7 @@ body::before {
     margin-bottom: 20px;
     background: #f4f3f8;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     gap: 15px;
 }
 
@@ -439,7 +376,7 @@ body::before {
 
 .tech-stack-box {
     text-align: center;
-    width: 550px;
+    width: 555px;
     padding: 20px;
     margin-left: -30px;
     background: #f4f3f8;
@@ -490,4 +427,111 @@ body::before {
 
 .tools-icons:hover {
     transform: scale(1.1);
+}
+
+.projects-box {
+    text-align: center;
+    width: 555px;
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-top: 20px;
+    margin-left: -30px;
+    background: #f4f3f8;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.projects-box:hover {
+    transform: translateY(-5px);
+}
+
+.projects-title {
+    font-size: 1.5rem;
+    color: #f4f3f8;
+    font-weight: 500;
+    margin: -1.5rem -1rem 0 -1rem;
+    padding: 1rem 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: lowercase;
+    background-color: #6e63a6;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.projects-title em {
+    font-style: italic;
+    color: #d7c6e2;
+    font-weight: 400;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    color: #6e63a6;
+    margin: 15px 0 5px;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: #5c5488;
+    margin: 0 50px 10px 50px;
+    line-height: 1.4;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+    justify-content: center;
+}
+
+.tag {
+    background: #dcd6f7;
+    color: #6e63a6;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #dcd6f7;
+    margin: 15px 0;
+    opacity: 0.6;
+    width: 100%;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.github-link, .details-link {
+    display: inline-block;
+}
+
+.github-icon,
+.details-icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.github-icon:hover,
+.details-icon:hover {
+    transform: scale(1.2);
 }
