@@ -240,7 +240,7 @@ body::before {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.about-me {
+.about-me-box {
     display: flex;
     justify-content: space-between;
     width: 550px;
