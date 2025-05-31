@@ -177,7 +177,8 @@ body::before {
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
-    color: #4a3f79;
+    background-clip: text;
+    color: transparent;
     background: linear-gradient(to right, #6e63a6, #a294d6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
