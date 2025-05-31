@@ -7,13 +7,13 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="main-container">
-            <img src="resources/disc.png" alt="rotating disc" class="rotating-disc">
-            <div class="disc-selector">
+        <div class="disc-selector">
                 <input type="radio" name="tab" id="profile" checked>
                 <input type="radio" name="tab" id="university">
                 <input type="radio" name="tab" id="archive">
             </div>
+        <div class="main-container">
+            <img src="resources/disc.png" alt="rotating disc" class="rotating-disc">
             <div class="disc-buttons">
                 <label for="profile" class="disc-btn profile-btn">
                     <img src="resources/profile-click.png" alt="profile icon">
@@ -30,9 +30,26 @@
             </div>
             <div class="contents">
                 <div class="profile-section content-section">
-                    <h2>profile !</h2>
-                    <p>photo. name. nicknames. social media buttons.</p>
-                    <p>zodiac. mbti. likes & pet peeves. hobbies & interests.</p>
+                    <div class="profile-box">
+                        <img src="resources/rexi.jpg" alt="Trixie Dolera" class="profile-pix">
+                        <div class="profile-info">
+                            <h3 class="name">Trixie T. Dolera</h3>
+                            <p class="bio">
+                                <span>20 • she/her • capricorn • intj</span>
+                            </p>
+                            <div class="socmed-buttons">
+                                <a href="https://instagram.com/httqs.xia/" class="socmed-btn" target="_blank"><img src="resources/instagram.svg" alt="Instagram: httqs.xia"></a>
+                                <a href="https://github.com/nsfw-syntaxia" class="socmed-btn" target="_blank"><img src="resources/github.svg" alt="GitHub: nsfw-syntaxia"></a>
+                                <a href="https://linkedin.com/in/trixie-dolera/" class="socmed-btn" target="_blank"><img src="resources/linkedin.svg" alt="LinkedIn: Trixie Dolera"></a>
+                                <a href="https://open.spotify.com/user/16yb5j9trmlsak7cohsllp6hw" class="socmed-btn" target="_blank"><img src="resources/spotify.svg" alt="Spotify: rexi (16yb5j9trmlsak7cohsllp6hw)"></a>
+                                <a href="mailto:xiandrelle@outlook.com" class="socmed-btn"><img src="resources/email.svg" alt="Email: xiandrelle@outlook.com"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-me-box">
+                        <h2>profile !</h2>
+                        <p>zodiac. mbti. likes & pet peeves. hobbies & interests.</p>
+                    </div>
                 </div>
                 <div class="university-section content-section">
                     <h2>uni-verse !</h2>
@@ -50,6 +67,7 @@
         <script>
             const buttons = document.querySelectorAll('.disc-btn');
             const inputs = document.querySelectorAll('.disc-selector input');
+            const sections = document.querySelectorAll('.content-section');
             const icons = {
                 profile: {
                     active: 'resources/profile-click.png',
@@ -70,9 +88,18 @@
                     const input = document.getElementById(forID);
                     const isActive = input.checked;
                     const icon = btn.querySelector('img');
-                    btn.style.backgroundColor = isActive ? '#776ea6' : '#dfdbf1';
+                    btn.style.backgroundColor = isActive ? '#776ea6' : '#f4f3f8';
                     icon.src = isActive ? icons[forID].active : icons[forID].inactive;
                 });
+
+                sections.forEach(section => section.style.display = 'none');
+                if (document.getElementById('profile').checked) {
+                    document.querySelector('.profile-section').style.display = 'block';
+                } else if (document.getElementById('university').checked) {
+                    document.querySelector('.university-section').style.display = 'block';
+                } else if (document.getElementById('archive').checked) {
+                    document.querySelector('.archive-section').style.display = 'block';
+                }
             }
             inputs.forEach((input) => {
                 input.addEventListener('change', updateButtons);
