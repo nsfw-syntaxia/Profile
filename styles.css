@@ -681,3 +681,22 @@ body::before {
     font-size: 0.75em;
     font-weight: 500;
 }
+
+.scroll-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #e6e1f2;
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #a093d4;
+    border-radius: 10px;
+    border: 2px solid #e6e1f2;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #6e63a6;
+}
